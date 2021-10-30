@@ -27,13 +27,17 @@ public class LuckyPenguin {
                         write("You are the last penguin to play! You win all the fish on the board!");
                         for (int j = 0; j < n; j++) {
                             if (y[j] >= p[i]) {
+                                if(y[i]==1)
                                 write("The winning penguins with " + y[j] + " fish:");
+                                else write("The winning penguins with " + y[j] + " fishes:");
                                 write("Penguin " + j);
                                 write("Penguin " + i);
                                 return;
                             }
                         }
+                            if(p[i]==1)
                             write("The winning penguins with " + p[i] + " fish:");
+                            else write("The winning penguins with " + p[i] + " fishes:");
                             write("Penguin " + i);
                         return;
                     }
