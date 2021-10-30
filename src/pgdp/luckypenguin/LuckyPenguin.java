@@ -76,7 +76,7 @@ public class LuckyPenguin {
                                 } else {
                                     f[s - 3]--;
                                     p[i]++;
-                                    write("You take the fish from F" + s + ".");
+                                    write("They take the fish from F" + s + ".");
                                 }
                             }
                             if (p[i] == 1) {
