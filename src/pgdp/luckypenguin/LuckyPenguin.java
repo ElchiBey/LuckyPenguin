@@ -7,7 +7,7 @@ public class LuckyPenguin {
       int n = readInt("Number of penguins:");
         while (n <= 1) n = readInt("Number of penguins should be >1:");
         int m = readInt("Starting fish per penguin:");
-        while (m <= 0) m = readInt("Start fish should be >0:");
+        while (m <= 0) m = readInt("Starting fish should be >0:");
         int[] f = new int[9];
         int[] p = new int[n];
         int[] y = new int[n];
