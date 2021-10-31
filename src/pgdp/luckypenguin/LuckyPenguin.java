@@ -18,7 +18,7 @@ public class LuckyPenguin {
         int x = n;
         while (x > 0) {
             for (int i = 0; i < n; i++) {
-                if (p[i] == 0) { x--; }
+                if (p[i] == 0) x--;
                 else {
                     writeBoard(f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]);
                     write("It's penguin " + i + " turn:");
@@ -27,12 +27,13 @@ public class LuckyPenguin {
                         p[i] += f[0] + f[1] + f[2] + f[3] + f[4] + f[5] + f[6] + f[7] + f[8];
                         for (int j = 0; j < n; j++) {
                             if (y[j] >= maxfish) maxfish = y[j];
-                            if(maxfish>=p[i]) z++;
+                            if(maxfish<p[i]) maxfish=p[i];
                         }
                         if (z == 0) {
                             if (p[i] == 1)
                                 write("The winning penguins with " + 1 + " fish:");
                             else write("The winning penguins with " + p[i] + " fishes:");
+                            return;
                         }
                         else{
                             if(maxfish>1) write("The winning penguins with " + maxfish + " fishes:");
