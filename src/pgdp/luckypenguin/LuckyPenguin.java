@@ -1,9 +1,10 @@
-package pgdp;
+package pgdp.luckypenguin;
 
-public class LuckyPingu extends pgdp.MiniJava {
+import static pgdp.MiniJava.*;
 
-    public static void main(String[] args) {
-        int n = readInt("Number of penguins:");
+public class LuckyPenguin {
+	public static void main(String[] args) {
+      int n = readInt("Number of penguins:");
         while (n <= 1) n = readInt("Number of penguins should be >1:");
         int m = readInt("Starting fish per penguin:");
         while (m <= 0) m = readInt("Starting fish should be >0:");
