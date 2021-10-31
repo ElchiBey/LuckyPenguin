@@ -33,8 +33,6 @@ public class LuckyPenguin {
                             if (p[i] == 1)
                                 write("The winning penguins with " + 1 + " fish:");
                             else write("The winning penguins with " + p[i] + " fishes:");
-                            write("Penguin " + i);
-                            return;
                         }
                         else{
                             if(maxfish>1) write("The winning penguins with " + maxfish + " fishes:");
