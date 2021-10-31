@@ -24,6 +24,7 @@ public class LuckyPenguin {
                     write("It's penguin " + i + " turn:");
                     if (x == 1) {
                         write("You are the last penguin to play! You win all the fish on the board!");
+                        p[i] += f[0] + f[1] + f[2] + f[3] + f[4] + f[5] + f[6] + f[7] + f[8];
                         for (int j = 0; j < n; j++) {
                             if (y[j] >= maxfish) maxfish = y[j];
                             if(maxfish>=p[i]) z++;
