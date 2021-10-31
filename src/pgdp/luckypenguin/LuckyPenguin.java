@@ -25,7 +25,6 @@ public class LuckyPenguin {
                     if (x == 1) {
                         write("You are the last penguin to play! You win all the fish on the board!");
                         for (int j = 0; j < n; j++) {
-                            //int maxfish = 0;
                             if (y[j] >= maxfish) maxfish = y[j];
                             if(maxfish>=p[i]) z++;
                         }
@@ -37,12 +36,17 @@ public class LuckyPenguin {
                         else{
                             if(maxfish>1) write("The winning penguins with " + maxfish + " fishes:");
                             else write("The winning penguins with " + 1 + " fish:");
-                            for (int t = 0; t < n; t++) {
-                                if (y[t] >= p[i]) {
+                            for (int t = 0; t < i; t++) {
+                                if (y[t] == maxfish) {
                                     write("Penguin " + t);
                                 }
                             }
                             write("Penguin " + i);
+                            for (int t = i+1; t < n; t++) {
+                                if (y[t] == maxfish) {
+                                    write("Penguin " + t);
+                                }
+                            }
                             return;
                         }
                     }
