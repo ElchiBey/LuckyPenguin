@@ -42,7 +42,7 @@ public class LuckyPenguin {
                                     write("Penguin " + t);
                                 }
                             }
-                            write("Penguin " + i);
+                            if(p[i]==maxfish) write("Penguin " + i);
                             for (int t = i+1; t < n; t++) {
                                 if (y[t] == maxfish) {
                                     write("Penguin " + t);
