@@ -27,7 +27,7 @@ public class LuckyPenguin {
                         for (int j = 0; j < n; j++) {
                             if (y[j] >= maxfish) maxfish = y[j];
                         }
-                            if(maxfish<p[i]) maxfish=p[i];
+                            if(maxfish<=p[i]) maxfish=p[i];
                             if(maxfish>1) write("The winning penguins with " + maxfish + " fishes:");
                             else write("The winning penguins with " + 1 + " fish:");
                             for (int t = 0; t < i; t++) {
