@@ -1,10 +1,9 @@
-package pgdp.luckypenguin;
+package pgdp;
 
-import static pgdp.MiniJava.*;
+public class LuckyPingu extends pgdp.MiniJava {
 
-public class LuckyPenguin {
-	public static void main(String[] args) {
-      int n = readInt("Number of penguins:");
+    public static void main(String[] args) {
+        int n = readInt("Number of penguins:");
         while (n <= 1) n = readInt("Number of penguins should be >1:");
         int m = readInt("Starting fish per penguin:");
         while (m <= 0) m = readInt("Starting fish should be >0:");
@@ -27,23 +26,22 @@ public class LuckyPenguin {
                         for (int j = 0; j < n; j++) {
                             if (y[j] >= maxfish) maxfish = y[j];
                         }
-                            if(maxfish<=p[i]) maxfish=p[i];
-                            if(maxfish>1) write("The winning penguins with " + maxfish + " fishes:");
-                            else write("The winning penguins with " + 1 + " fish:");
-                            for (int t = 0; t < i; t++) {
-                                if (y[t] == maxfish) {
-                                    write("Penguin " + t);
-                                }
+                        if (maxfish <= p[i]) maxfish = p[i];
+                        if (maxfish > 1) write("The winning penguins with " + maxfish + " fishes:");
+                        else write("The winning penguins with " + 1 + " fish:");
+                        for (int t = 0; t < i; t++) {
+                            if (y[t] == maxfish) {
+                                write("Penguin " + t);
                             }
-                            if(p[i]==maxfish) write("Penguin " + i);
-                            for (int t = i+1; t < n; t++) {
-                                if (y[t] == maxfish) {
-                                    write("Penguin " + t);
-                                }
-                            }
-                            return;
                         }
-                    else{
+                        if (p[i] == maxfish) write("Penguin " + i);
+                        for (int t = i + 1; t < n; t++) {
+                            if (y[t] == maxfish) {
+                                write("Penguin " + t);
+                            }
+                        }
+                        return;
+                    } else {
                         int a = dice();
                         int b = dice();
                         int s = a + b;
@@ -53,7 +51,10 @@ public class LuckyPenguin {
                             p[i]--;
                             write("Wedding! You give a fish and place it on F7.");
                         } else if (s == 2) {
-                            p[i] += f[0] + f[1] + f[2] + f[3] + f[5] + f[6] + f[7] + f[8];
+                            for(int g=0; g<9; g++){
+                                p[i] += f[g];
+                            }
+                            p[i] -= f[4];
                             write("Lucky penguin! You win all fish on the board except F7!");
                             f[0] = 0;
                             f[1] = 0;
@@ -64,16 +65,12 @@ public class LuckyPenguin {
                             f[7] = 0;
                             f[8] = 0;
                         } else if (s == 12) {
-                            p[i] += f[0] + f[1] + f[2] + f[3] + f[4] + f[5] + f[6] + f[7] + f[8];
-                            f[0] = 0;
-                            f[1] = 0;
-                            f[2] = 0;
-                            f[3] = 0;
-                            f[4] = 0;
-                            f[5] = 0;
-                            f[6] = 0;
-                            f[7] = 0;
-                            f[8] = 0;
+                            for(int g=0; g<9; g++){
+                                p[i] += f[g];
+                            }
+                            for(int g=0; g<9; g++){
+                                f[g]=0;
+                            }
                         } else {
                             if (f[s - 3] == 0) {
                                 f[s - 3]++;
@@ -108,9 +105,9 @@ public class LuckyPenguin {
                         }
                     }
                 }
-                if (i + 1 == n) {
+                if (i == n-1) {
                     i = -1;
-                    x=n;
+                    x = n;
                 }
             }
         }
