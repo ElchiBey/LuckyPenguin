@@ -61,14 +61,10 @@ public class LuckyPenguin extends MiniJava {
                             }
                             penguins[i] -= fields[4];
                             write("Lucky penguin! You win all fish on the board except F7!");
-                            fields[0] = 0;
-                            fields[1] = 0;
-                            fields[2] = 0;
-                            fields[3] = 0;
-                            fields[4] = 0;
-                            fields[6] = 0;
-                            fields[7] = 0;
-                            fields[8] = 0;
+                            for (int j = 0; j < 9; j++){
+                                if (j != 4)
+                                    fields[j] = 0;
+                            }
                         } else if (sum == 12) {
                             for (int g = 0; g < 9; g++) {
                                 penguins[i] += fields[g];
